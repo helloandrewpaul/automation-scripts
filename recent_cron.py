@@ -36,16 +36,16 @@ def main():
         recent_cron_jobs = parse_cron_log(log_lines, time_frame)
 
         if recent_cron_jobs:
-            print("Recent cron jobs:")
+            print('Recent cron jobs:')
             for entry in recent_cron_jobs:
                 print(entry.strip())
         else:
-            print("No recent cron jobs found.")
+            print('No recent cron jobs found.')
 
     except FileNotFoundError:
-        print(f"Error: The file {log_file_path} was not found.")
+        print(f'Error: The file {log_file_path} was not found.')
     except PermissionError:
-        print(f"Error: Permission denied when trying to read {log_file_path}.")
+        print(f'Error: Permission denied when trying to read {log_file_path}.')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
